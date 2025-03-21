@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Typography, Fade, Box } from '@mui/material';
 
 const carouselItems = [
-  "Turn Dreams into Checkmarks – Create Your Best Life List.",
-  "Set Goals. Inspire Others. Stay Motivated.",
-  "The No-Nonsense Goal-Setting Network – Focus. Achieve. Repeat.",
-  "Goals that Matter. Progress that Shows. A Community that Cares.",
+  'Turn Dreams into Checkmarks – Create Your Best Life List.',
+  'Set Goals. Inspire Others. Stay Motivated.',
+  'The No-Nonsense Goal-Setting Network – Focus. Achieve. Repeat.',
+  'Goals that Matter. Progress that Shows. A Community that Cares.',
 ];
 
 export const Carousel: React.FC = () => {
@@ -30,7 +30,13 @@ export const Carousel: React.FC = () => {
   return (
     <Box height={160}>
       <Fade in={fade} timeout={{ enter: 500, exit: 500 }}>
-        <Typography color='#f5f5dc' variant="h5" component="p" gutterBottom sx={{ fontWeight: 500, fontSize: '2rem' }}>
+        <Typography
+          color="#f5f5dc"
+          variant="h5"
+          component="p"
+          gutterBottom
+          sx={{ fontWeight: 500, fontSize: '2rem' }}
+        >
           {carouselItems[currentIndex]}
         </Typography>
       </Fade>

@@ -1,8 +1,8 @@
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import React from "react";
-import theme from "./theme";
-import { Header } from "./components/header";
-import LaunchPage from "./pages/Launch";
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import React from 'react';
+import theme from './theme';
+import { Header } from './components/header';
+import LaunchPage from './pages/Launch';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <CssBaseline />
       <LaunchPage />
     </ThemeProvider>
-  )
+  );
 }
 
 export default App;

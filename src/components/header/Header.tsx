@@ -4,10 +4,10 @@ import logo from './../../assets/logo.png';
 
 export const Header: React.FC = () => {
   return (
-    <AppBar position='static' color='transparent' elevation={0}>
+    <AppBar position="static" color="transparent" elevation={0}>
       <Toolbar>
-        <Box component='img' src={logo} sx={{ width: 60 }} />
+        <Box component="img" src={logo} sx={{ width: 60 }} />
       </Toolbar>
     </AppBar>
-  )
-}
+  );
+};

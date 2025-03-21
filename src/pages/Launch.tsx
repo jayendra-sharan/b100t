@@ -19,10 +19,10 @@ export default function LaunchPage() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
       }}
     >
-      <Box component='img' src={logo} sx={{ width: 120 }} />
+      <Box component="img" src={logo} sx={{ width: 120 }} />
       <Box sx={{ position: 'relative', zIndex: 2, width: '100%' }}>
         <Container
           sx={{
@@ -42,7 +42,7 @@ export default function LaunchPage() {
             gutterBottom
             sx={{
               fontWeight: 900,
-              fontSize: '6rem'
+              fontSize: '6rem',
             }}
           >
             Beyond 100 Things
