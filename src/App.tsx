@@ -1,8 +1,9 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import React from 'react';
 import theme from './theme';
-import { Header } from './components/header';
 import LaunchPage from './pages/Launch';
+import emailjs from '@emailjs/browser';
+
+emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
 function App() {
   return (
