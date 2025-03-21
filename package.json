@@ -7,8 +7,11 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "prepare": "npx husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": "eslint --fix --max-warnings=0"
   },
   "keywords": [],
   "author": "",
@@ -42,7 +45,9 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-vitest": "^0.5.4",
     "globals": "^16.0.0",
+    "husky": "^9.1.7",
     "jsdom": "^26.0.0",
+    "lint-staged": "^15.5.0",
     "prettier": "^3.5.3",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.27.0",

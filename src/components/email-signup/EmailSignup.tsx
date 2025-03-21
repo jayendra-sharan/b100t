@@ -13,47 +13,41 @@ export const EmailSignup: React.FC = () => {
     setSending(true);
     const templateParams = {
       email,
-    }
-    emailjs
-      .send('service_j1bfrlu', 'template_0jv6hyh', templateParams)
-      .then((response) => {
+    };
+    emailjs.send('service_j1bfrlu', 'template_0jv6hyh', templateParams).then(
+      (response) => {
         setIsRegistered(true);
         setSending(false);
-      }, (error) => {
+      },
+      (error) => {
         console.log('Error sending email.');
         setError('Apolgies, someone was at the door! Could you try again?');
         setSending(false);
         setIsRegistered(false);
-      })
-
+      },
+    );
   };
 
   if (sending) {
     return (
       <Box>
-        <Typography
-          component="p"
-          gutterBottom
-        >
-          I'm glad that you are excited...
+        <Typography component="p" gutterBottom>
+          {`I'm glad that you are excited...`}
         </Typography>
-        <Divider sx={{ backgroundColor: "#ffffff" }}/>
+        <Divider sx={{ backgroundColor: '#ffffff' }} />
       </Box>
-    )
+    );
   }
 
   if (isRegistered) {
     return (
       <Box>
-        <Typography
-          component="p"
-          gutterBottom
-        >
+        <Typography component="p" gutterBottom>
           See you soon!
         </Typography>
-        <Divider sx={{ backgroundColor: "#ffffff" }}/>
+        <Divider sx={{ backgroundColor: '#ffffff' }} />
       </Box>
-    )
+    );
   }
 
   return (
@@ -68,16 +62,11 @@ export const EmailSignup: React.FC = () => {
         gap: 2, // space between input and button
       }}
     >
-      {
-        !!error && (
-          <Typography
-            gutterBottom
-            component="p"
-            >
-              {error}
-          </Typography>
-        )
-      }
+      {!!error && (
+        <Typography gutterBottom component="p">
+          {error}
+        </Typography>
+      )}
       <TextField
         variant="outlined"
         type="email"
