@@ -2,7 +2,10 @@ import React, { useState } from 'react';
 import { Box, TextField, Button, Typography, Divider } from '@mui/material';
 import emailjs from '@emailjs/browser';
 
+import { useTranslation } from 'react-i18next';
+
 export const EmailSignup: React.FC = () => {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [sending, setSending] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
@@ -21,7 +24,7 @@ export const EmailSignup: React.FC = () => {
       },
       (error) => {
         console.log('Error sending email.');
-        setError('Apolgies, someone was at the door! Could you try again?');
+        setError(t('email_sign_up_error_message'));
         setSending(false);
         setIsRegistered(false);
       },
@@ -32,7 +35,7 @@ export const EmailSignup: React.FC = () => {
     return (
       <Box>
         <Typography component="p" gutterBottom>
-          {`I'm glad that you are excited...`}
+          {t('email_sign_up_loading_text')}
         </Typography>
         <Divider sx={{ backgroundColor: '#ffffff' }} />
       </Box>
@@ -43,7 +46,7 @@ export const EmailSignup: React.FC = () => {
     return (
       <Box>
         <Typography component="p" gutterBottom>
-          See you soon!
+          {t('email_sign_up_success')}
         </Typography>
         <Divider sx={{ backgroundColor: '#ffffff' }} />
       </Box>
@@ -70,7 +73,7 @@ export const EmailSignup: React.FC = () => {
       <TextField
         variant="outlined"
         type="email"
-        placeholder="Enter your email"
+        placeholder={t('email_sign_up_input_placeholder')}
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         sx={{
@@ -81,14 +84,13 @@ export const EmailSignup: React.FC = () => {
       <Button
         type="submit"
         variant="contained"
-        size="medium"
+        size="large"
         sx={{
           textTransform: 'none',
           fontWeight: 'bold',
-          width: { xs: '100%', sm: '200px' },
         }}
       >
-        Join the waitlist
+        {t('email_sign_up_button')}
       </Button>
     </Box>
   );

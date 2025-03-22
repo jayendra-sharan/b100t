@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, Fade, Box } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
 const carouselItems = [
-  'Turn Dreams into Checkmarks – Create Your Best Life List.',
-  'Set Goals. Inspire Others. Stay Motivated.',
-  'The No-Nonsense Goal-Setting Network – Focus. Achieve. Repeat.',
-  'Goals that Matter. Progress that Shows. A Community that Cares.',
+  'carouse_text_1',
+  'carouse_text_2',
+  'carouse_text_3',
+  'carouse_text_4',
 ];
 
 export const Carousel: React.FC = () => {
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
@@ -37,7 +39,7 @@ export const Carousel: React.FC = () => {
           gutterBottom
           sx={{ fontWeight: 500, fontSize: '2rem' }}
         >
-          {carouselItems[currentIndex]}
+          {t(carouselItems[currentIndex])}
         </Typography>
       </Fade>
     </Box>
