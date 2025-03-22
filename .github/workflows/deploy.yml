@@ -31,7 +31,7 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-      
+
       - name: Determine environment target
         id: set-env
         run: |
@@ -40,7 +40,7 @@ jobs:
           else
             echo "env_target=${{ github.ref_name }}" >> $GITHUB_OUTPUT
           fi
-      
+
       - name: Copy correct .env file
         run: |
           ENV="${{ steps.set-env.outputs.env_target }}"
