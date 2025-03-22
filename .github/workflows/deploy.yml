@@ -2,23 +2,55 @@ name: Deploy to S3
 
 on:
   push:
-    branches: [main]
+    branches:
+      - dev
+      - stg
+      - main
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy (dev, stg, prod)'
+        required: true
+        default: 'dev'
+
+env:
+  AWS_REGION: eu-north-1
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v3
 
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Determine environment target
+        id: set-env
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "env_target=${{ github.event.inputs.environment }}" >> $GITHUB_OUTPUT
+          else
+            echo "env_target=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Copy correct .env file
+        run: |
+          ENV="${{ steps.set-env.outputs.env_target }}"
+          if [ "$ENV" = "dev" ]; then
+            cp .env.development .env
+          elif [ "$ENV" = "stg" ]; then
+            cp .env.staging .env
+          else
+            cp .env.production .env
+          fi
 
       - name: Run tests
         run: npm run test
@@ -29,12 +61,13 @@ jobs:
       - name: Build app
         run: npm run build
 
-      - name: Configure AWS Crendentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-north-1
-
       - name: Deploy to S3
-        run: aws s3 sync dist/ s3://b100t-fe --delete
+        uses: jakejarvis/s3-sync-action@v0.5.1
+        with:
+          args: --delete
+        env:
+          AWS_S3_BUCKET: ${{ steps.set-env.outputs.env_target == 'dev' && 'b100t-fe-dev' || steps.set-env.outputs.env_target == 'stg' && 'b100t-fe-stg' || 'b100t-fe' }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ env.AWS_REGION }}
+          SOURCE_DIR: dist

@@ -1,8 +1,6 @@
 import React from 'react';
 import { Box, Container, Typography } from '@mui/material';
 
-import backgroundImage from './../assets/background.jpg';
-
 import logo from './../assets/logo.png';
 import { Carousel } from './../components/carousel';
 import { EmailSignup } from './../components/email-signup';
@@ -13,9 +11,6 @@ export default function LaunchPage() {
       sx={{
         position: 'relative',
         minHeight: '100vh',
-        backgroundImage: `url(${backgroundImage})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',

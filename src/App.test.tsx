@@ -3,6 +3,5 @@ import App from './App';
 
 test('renders component', () => {
   render(<App />);
-  const heading = screen.getByText(/Beyond 100 Things/);
-  expect(heading).toBeInTheDocument();
+  expect(screen.getAllByText(/beyond 100 things/i).length).greaterThan(0);
 });

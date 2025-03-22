@@ -34,7 +34,7 @@ export default [
     settings: {
       react: {
         version: 'detect',
-      }
+      },
     },
     rules: {
       // Recommended rules
@@ -42,7 +42,7 @@ export default [
       'react/react-in-jsx-scope': 'off', // Not needed in React 17+
       'prettier/prettier': 'error',
     },
-    ignores: ["node_module", "dist"]
+    ignores: ['node_module', 'dist'],
   },
   eslintConfigPrettier,
 ];
