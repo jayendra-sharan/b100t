@@ -6,8 +6,6 @@ export const Footer: React.FC = () => {
     <Box
       component="footer"
       sx={{
-        position: 'absolute',
-        bottom: 0,
         width: '100%',
         py: 2,
         textAlign: 'center',
