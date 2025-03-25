@@ -10,14 +10,13 @@ export default function LaunchPage() {
     <Box
       sx={{
         position: 'relative',
-        minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
       }}
     >
-      <Box component="img" src={logo} sx={{ width: 120 }} />
+      <Box component="img" src={logo} sx={{ width: 80 }} />
       <Box sx={{ position: 'relative', zIndex: 2, width: '100%' }}>
         <Container
           sx={{
@@ -28,7 +27,7 @@ export default function LaunchPage() {
             alignItems: 'center',
             textAlign: 'center',
             color: 'white',
-            px: 2,
+            px: 0,
           }}
         >
           <Typography
@@ -37,7 +36,11 @@ export default function LaunchPage() {
             gutterBottom
             sx={{
               fontWeight: 900,
-              fontSize: '6rem',
+              fontSize: {
+                sx: '4rem',
+                sm: '4rem',
+                md: '6rem',
+              },
             }}
           >
             Beyond 100 Things
