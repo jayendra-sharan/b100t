@@ -9,6 +9,8 @@ jobs:
   create-pull-request:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
       - name: Create pull request from dev to stg
         uses: repo-sync/pull-request@v2
         with:
