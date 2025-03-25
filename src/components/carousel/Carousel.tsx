@@ -30,7 +30,7 @@ export const Carousel: React.FC = () => {
   }, []);
 
   return (
-    <Box height={160}>
+    <Box height={160} maxWidth={600}>
       <Fade in={fade} timeout={{ enter: 500, exit: 500 }}>
         <Typography
           color="#f5f5dc"

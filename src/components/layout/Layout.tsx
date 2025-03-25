@@ -15,8 +15,7 @@ export const Layout: React.FC<{ children?: React.ReactNode }> = ({
       display="flex"
       flexDirection="column"
       sx={{
-        height: '100vh',
-        overflow: 'hidden',
+        minHeight: '100vh',
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
@@ -25,7 +24,16 @@ export const Layout: React.FC<{ children?: React.ReactNode }> = ({
     >
       <Header />
 
-      <Container component="main" sx={{ flexGrow: 1, py: 4, pt: 10 }}>
+      <Container
+        component="main"
+        sx={{
+          flexGrow: 1,
+          py: 4,
+          pt: 10,
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
         {children || <Outlet />}
       </Container>
 

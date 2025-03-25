@@ -11,16 +11,14 @@ export const Header: React.FC = () => {
       position="absolute"
       color="transparent"
       elevation={0}
-      sx={{ top: 0 }}
+      sx={{ top: 0, paddingBlockStart: '20px' }}
     >
       <Toolbar>
         <Typography
           variant="h6"
           color="inherit"
           sx={{ flexGrow: 1, color: '#ffffff' }}
-        >
-          Beyond 100 Things
-        </Typography>
+        ></Typography>
 
         {enableLanguageSwitcher && <LanguageSelector />}
       </Toolbar>
