@@ -22,4 +22,4 @@ jobs:
           destination_branch: 'stg'
           pr_title: 'Auto PR: Merge dev into stg'
           pr_body: 'This PR was automatically created by a GitHub Action on push to dev.'
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PAT }}
