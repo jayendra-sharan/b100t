@@ -1,0 +1,92 @@
+[
+  {
+    "question_id": "q01",
+    "question": "1. What is this app all about?",
+    "answer": "<p>This app is a goal-setting social network designed to help individuals set, track, and celebrate their personal goals — while staying motivated through community-driven accountability. It's a distraction-free, no-nonsense platform focused entirely on progress and purpose.</p>"
+  },
+  {
+    "question_id": "q02",
+    "question": "2. How is it different from productivity or habit-tracking apps?",
+    "answer": "<p>Most productivity apps are either private tools (like to-do lists or calendars) or general-purpose social apps with noisy feeds. This platform combines the best of both worlds — structured personal goal tracking with social accountability and inspiration — minus the clutter of comments, endless likes, or random content.</p>"
+  },
+  {
+    "question_id": "q03",
+    "question": "3. Who is this app for?",
+    "answer": "<p><ul><li>Individuals who are serious about setting and completing personal goals.</li><li>People looking to be inspired by others' achievements.</li><li>Those who want to track their progress with or without sharing publicly.</li><li>Friends or partners working on shared life goals together.</li></ul></p>"
+  },
+  {
+    "question_id": "q04",
+    "question": "4. How do I get started?",
+    "answer": "<p><ol><li>Sign up using your email.</li><li>Fill out a basic profile (name, bio, visibility settings).</li><li>Start adding your goals — up to 100 predefined or custom goals.</li><li>As you complete goals, post progress updates to your timeline.</li></ol></p>"
+  },
+  {
+    "question_id": "q05",
+    "question": "5. What kind of goals can I add?",
+    "answer": "<p>You can:</p><ul><li>Choose from predefined goal templates (e.g., run a marathon, visit 10 countries).</li><li>Create custom goals tailored to your personal ambitions.</li><li>Categorize your goals (travel, fitness, learning, finance, etc.).</li><li>Track your progress as a count — for example, 10/100 goals completed.</li></ul>"
+  },
+  {
+    "question_id": "q06",
+    "question": "6. What is the timeline/feed?",
+    "answer": "<p>The timeline is a stream of updates from the community, showing goal completions and milestones from all users (unless filtered). It's similar to a social feed — but only for meaningful progress updates, no distractions.</p><p>You can:</p><ul><li>View posts from the entire network.</li><li>Toggle to see only posts from your friends or partner.</li><li>React to achievements (e.g., 👌, 🔥, 🎉), but not leave open-ended comments.</li></ul>"
+  },
+  {
+    "question_id": "q07",
+    "question": "7. Can I post anonymously?",
+    "answer": "<p>Yes. When posting an update, you can choose to:</p><ul><li>Post publicly with your name.</li><li>Post anonymously, so others only see “A user just completed a goal.”</li></ul><p>This applies to all post types, except when uploading an image (image posts must be public).</p>"
+  },
+  {
+    "question_id": "q08",
+    "question": "8. Can I upload pictures with my goal updates?",
+    "answer": "<p>Yes, but with a privacy safeguard:</p><ul><li>You can only upload images on public posts.</li></ul><p>This is because posting an image while staying anonymous doesn't serve the purpose — images may reveal your identity or context. In the future, we plan to add a feature that allows users to maintain a private album of completed goals and achievements for personal reflection and record-keeping.</p>"
+  },
+  {
+    "question_id": "q09",
+    "question": "9. Can I comment on posts?",
+    "answer": "<p>No, and that's intentional. To stay focused and free from distractions, we've removed open-text comments. Instead, users can:</p><ul><li>React using pre-selected emojis.</li><li>Add short, predefined motivational phrases (like “Great job!” or “Keep it up!”).</li></ul>"
+  },
+  {
+    "question_id": "q10",
+    "question": "10. How do social connections work?",
+    "answer": "<p>You can build a small social circle within the platform:</p><ul><li>Follow other users.</li><li>Send friend requests.</li><li>Tag a partner (e.g., for shared goals like traveling together or getting fit).</li><li>Your connections help you stay motivated — and they'll be notified when you achieve goals.</li></ul>"
+  },
+  {
+    "question_id": "q11",
+    "question": "11. How is privacy handled on the platform?",
+    "answer": "<p>Privacy is one of our core principles.</p><p>You can:</p><ul><li>Choose to keep your profile public, private, or visible to friends only.</li><li>Post anonymously if you don't want to share your identity.</li><li>Control who can see your posts, goal progress, and tagged updates.</li><li>Choose whether or not your friends or partner can tag you in public or private updates.</li></ul>"
+  },
+  {
+    "question_id": "q12",
+    "question": "12. What happens when I complete a goal?",
+    "answer": "<p>When you complete a goal:</p><ul><li>You're prompted to share it on the feed (optional).</li><li>You can attach an image (only in public mode).</li><li>The update will show your progress count (e.g., “A user has completed 10 out of 70 goals.”).</li><li>Friends and other users can react with encouragement.</li></ul>"
+  },
+  {
+    "question_id": "q13",
+    "question": "13. Are there any distractions like ads or feeds unrelated to goals?",
+    "answer": "<p>No. This app is intentionally designed to be:</p><ul><li>Ad-free</li><li>Comment-free</li><li>Focused purely on personal growth and progress</li></ul><p>You won't find memes, politics, or unrelated content here — just real stories of people achieving meaningful goals.</p>"
+  },
+  {
+    "question_id": "q14",
+    "question": "14. Are there any features for collaboration or groups?",
+    "answer": "<p>Coming soon:</p><ul><li>Goal-based community groups where users with similar goals can join and support each other.</li><li>Public challenges (e.g., \"Read 12 books in a year\") with group progress tracking.</li><li>Invite-only circles for private group accountability.</li><li>Private achievement albums where users can store completed goals with images and reflections.</li></ul>"
+  },
+  {
+    "question_id": "q15",
+    "question": "15. What if I don't want to be seen at all, but still want to use the app?",
+    "answer": "<p>Totally possible.</p><ul><li>You can use the platform in complete anonymity.</li><li>Your posts can be anonymous.</li><li>You can set your profile to private, and no one will see your activity unless you explicitly allow it.</li></ul>"
+  },
+  {
+    "question_id": "q16",
+    "question": "16. Will this app remain free?",
+    "answer": "<p>[This answer has been intentionally left blank for now.]</p>"
+  },
+  {
+    "question_id": "q17",
+    "question": "17. What's coming next?",
+    "answer": "<p>Here's a peek into what's on our roadmap:</p><ul><li>Goal-based community groups.</li><li>Weekly analytics and personal goal insights.</li><li>Public challenges and seasonal campaigns.</li><li>Integration with fitness/wellness apps.</li><li>Private achievement albums.</li><li>Desktop and mobile native apps.</li></ul>"
+  },
+  {
+    "question_id": "q18",
+    "question": "18. How can I be part of this early journey?",
+    "answer": "<p><ul><li>Sign up, start setting your goals, and share your progress.</li><li>Invite your close friends or partner to join.</li><li>Help us shape the app by sharing feedback.</li><li>Follow our updates and contribute your ideas — this platform is being built for real people like you.</li></ul></p>"
+  }
+]
