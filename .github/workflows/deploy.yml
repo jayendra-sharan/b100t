@@ -17,9 +17,10 @@ env:
   AWS_REGION: eu-north-1
 
 jobs:
-  deploy:
+  deploy-dev:
+    if: github.ref == 'refs/heads/dev' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'dev')
     runs-on: ubuntu-latest
-
+    name: Deploy to S3 - Development
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -32,25 +33,106 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Determine environment target
-        id: set-env
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "env_target=${{ github.event.inputs.environment }}" >> $GITHUB_OUTPUT
-          else
-            echo "env_target=${{ github.ref_name }}" >> $GITHUB_OUTPUT
-          fi
+      - name: Copy .env.development file
+        run: cp .env.development .env
 
-      - name: Copy correct .env file
-        run: |
-          ENV="${{ steps.set-env.outputs.env_target }}"
-          if [ "$ENV" = "dev" ]; then
-            cp .env.development .env
-          elif [ "$ENV" = "stg" ]; then
-            cp .env.staging .env
-          else
-            cp .env.production .env
-          fi
+      - name: Run tests
+        run: npm run test
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Build app
+        run: npm run build:dev
+
+      - name: Deploy to S3
+        uses: jakejarvis/s3-sync-action@v0.5.1
+        with:
+          args: --delete
+        env:
+          AWS_S3_BUCKET: b100t-fe-dev
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ env.AWS_REGION }}
+          SOURCE_DIR: dist
+
+      - name: Configure AWS credentials for invalidation
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Invalidate CloudFront Cache
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID_DEV }} --paths "/*"
+
+  deploy-stg:
+    if: github.ref == 'refs/heads/stg' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'stg')
+    runs-on: ubuntu-latest
+    name: Deploy to S3 - Staging
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Copy .env.staging file
+        run: cp .env.staging .env
+
+      - name: Run tests
+        run: npm run test
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Build app
+        run: npm run build:stg
+
+      - name: Deploy to S3
+        uses: jakejarvis/s3-sync-action@v0.5.1
+        with:
+          args: --delete
+        env:
+          AWS_S3_BUCKET: b100t-fe-stg
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ env.AWS_REGION }}
+          SOURCE_DIR: dist
+
+      - name: Configure AWS credentials for invalidation
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Invalidate CloudFront Cache
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID_STG }} --paths "/*"
+
+  deploy-prod:
+    if: github.ref == 'refs/heads/main' || (github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'prod')
+    runs-on: ubuntu-latest
+    name: Deploy to S3 - Production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Copy .env.production file
+        run: cp .env.production .env
 
       - name: Run tests
         run: npm run test
@@ -66,8 +148,18 @@ jobs:
         with:
           args: --delete
         env:
-          AWS_S3_BUCKET: ${{ steps.set-env.outputs.env_target == 'dev' && 'b100t-fe-dev' || steps.set-env.outputs.env_target == 'stg' && 'b100t-fe-stg' || 'b100t-fe' }}
+          AWS_S3_BUCKET: b100t-fe
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ env.AWS_REGION }}
           SOURCE_DIR: dist
+
+      - name: Configure AWS credentials for invalidation
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Invalidate CloudFront Cache
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DIST_ID_PROD }} --paths "/*"

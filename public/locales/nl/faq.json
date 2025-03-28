@@ -1,0 +1,92 @@
+[
+  {
+    "question_id": "q01",
+    "question": "1. Wat is deze app precies?",
+    "answer": "<p>Deze app is een sociaal netwerk voor doelen, ontworpen om mensen te helpen hun persoonlijke doelen te stellen, bij te houden en te vieren — met motivatie vanuit een gelijkgestemde community. Het is een no-nonsense platform dat volledig gericht is op voortgang en betekenis.</p>"
+  },
+  {
+    "question_id": "q02",
+    "question": "2. Hoe verschilt het van productiviteits- of gewoontetracker-apps?",
+    "answer": "<p>De meeste productiviteitsapps zijn ofwel privétools (zoals to-do-lijsten of agenda’s) of algemene sociale platforms met veel afleiding. Dit platform combineert het beste van beide werelden — gestructureerde persoonlijke doelopvolging met sociale verantwoordelijkheid en inspiratie — zonder de rommel van eindeloze reacties of willekeurige inhoud.</p>"
+  },
+  {
+    "question_id": "q03",
+    "question": "3. Voor wie is deze app bedoeld?",
+    "answer": "<p><ul><li>Personen die serieus hun persoonlijke doelen willen behalen.</li><li>Mensen die geïnspireerd willen worden door de prestaties van anderen.</li><li>Iedereen die zijn voortgang wil bijhouden, al dan niet anoniem.</li><li>Vrienden of partners die samen aan levensdoelen werken.</li></ul></p>"
+  },
+  {
+    "question_id": "q04",
+    "question": "4. Hoe begin ik?",
+    "answer": "<p><ol><li>Meld je aan met je e-mailadres.</li><li>Vul je profiel in (naam, bio, zichtbaarheid).</li><li>Voeg je doelen toe — maximaal 100 (standaard of op maat).</li><li>Deel je voortgang zodra je doelen afrondt.</li></ol></p>"
+  },
+  {
+    "question_id": "q05",
+    "question": "5. Wat voor soort doelen kan ik toevoegen?",
+    "answer": "<p>Je kunt:<ul><li>Standaarddoelen kiezen (zoals een marathon lopen, landen bezoeken).</li><li>Eigen doelen maken die passen bij jouw ambities.</li><li>Je doelen categoriseren (reizen, gezondheid, leren, etc.).</li><li>Je voortgang bijhouden als een teller — bijvoorbeeld 10/100 doelen voltooid.</li></ul></p>"
+  },
+  {
+    "question_id": "q06",
+    "question": "6. Wat is de tijdlijn/feed?",
+    "answer": "<p>De tijdlijn toont updates vanuit de community, met voltooide doelen en mijlpalen van alle gebruikers (tenzij gefilterd). Het is vergelijkbaar met een social feed — maar uitsluitend voor zinvolle voortgangsupdates, zonder afleiding.</p><p>Je kunt:<ul><li>Posts van iedereen bekijken.</li><li>Wisselen naar posts van alleen je vrienden of partner.</li><li>Reageren met emojis, maar geen open reacties plaatsen.</li></ul></p>"
+  },
+  {
+    "question_id": "q07",
+    "question": "7. Kan ik anoniem posten?",
+    "answer": "<p>Ja. Bij het posten van een update kun je kiezen:<ul><li>Post openbaar met je naam.</li><li>Post anoniem, zodat anderen enkel “Een gebruiker voltooide een doel” zien.</li></ul></p><p>Dit geldt voor alle posts, behalve als je een afbeelding uploadt (alleen voor openbare posts).</p>"
+  },
+  {
+    "question_id": "q08",
+    "question": "8. Kan ik foto’s uploaden bij mijn updates?",
+    "answer": "<p>Ja, maar met een privacybescherming:<ul><li>Je kunt alleen afbeeldingen toevoegen aan openbare posts.</li></ul></p><p>Een afbeelding toevoegen terwijl je anoniem blijft heeft weinig zin — beelden kunnen je identiteit onthullen. In de toekomst voegen we een functie toe waarmee je een privé-album met behaalde doelen kunt bijhouden voor eigen reflectie en herinnering.</p>"
+  },
+  {
+    "question_id": "q09",
+    "question": "9. Kan ik reageren op posts?",
+    "answer": "<p>Nee, en dat is een bewuste keuze.<br>Om focus te behouden zijn vrije reacties niet toegestaan. In plaats daarvan kun je:<ul><li>Reageren met vooraf ingestelde emojis.</li><li>Een korte, motiverende standaardtekst gebruiken (zoals \"Goed gedaan!\").</li></ul></p>"
+  },
+  {
+    "question_id": "q10",
+    "question": "10. Hoe werken connecties op het platform?",
+    "answer": "<p>Je kunt een kleine sociale kring opbouwen binnen het platform:<ul><li>Andere gebruikers volgen.</li><li>Vriendschapsverzoeken sturen.</li><li>Een partner taggen bij gezamenlijke doelen.</li><li>Je wordt op de hoogte gehouden als zij iets voltooien.</li></ul></p>"
+  },
+  {
+    "question_id": "q11",
+    "question": "11. Hoe wordt privacy geregeld op het platform?",
+    "answer": "<p>Privacy is een kernprincipe.<br>Je kunt:<ul><li>Je profiel instellen als openbaar, privé of alleen zichtbaar voor vrienden.</li><li>Anoniem posten als je je identiteit niet wilt delen.</li><li>Bepalen wie je posts en voortgang kan zien.</li><li>Zelf bepalen of vrienden/partners je mogen taggen in updates.</li></ul></p>"
+  },
+  {
+    "question_id": "q12",
+    "question": "12. Wat gebeurt er als ik een doel voltooi?",
+    "answer": "<p>Wanneer je een doel afrondt:<ul><li>Kun je ervoor kiezen om het te delen.</li><li>Kun je een afbeelding toevoegen (alleen bij openbare posts).</li><li>Wordt je voortgang weergegeven (bijv. “Een gebruiker voltooide 10 van 70 doelen”).</li><li>Vrienden kunnen reageren met aanmoedigingen.</li></ul></p>"
+  },
+  {
+    "question_id": "q13",
+    "question": "13. Zijn er advertenties of afleiding?",
+    "answer": "<p>Nee. Deze app is bewust ontworpen als:<ul><li>Advertentievrij</li><li>Zonder vrije reacties</li><li>Volledig gefocust op persoonlijke groei</li></ul></p><p>Je vindt hier geen memes of politieke discussies — enkel echte voortgangsverhalen.</p>"
+  },
+  {
+    "question_id": "q14",
+    "question": "14. Zijn er functies voor samenwerking of groepen?",
+    "answer": "<p>Binnenkort beschikbaar:<ul><li>Doelgerichte communitygroepen.</li><li>Openbare uitdagingen (zoals \"12 boeken lezen in een jaar\").</li><li>Privékringen voor accountability.</li><li>Privé-albums om behaalde doelen met afbeeldingen op te slaan.</li></ul></p>"
+  },
+  {
+    "question_id": "q15",
+    "question": "15. Kan ik het platform volledig anoniem gebruiken?",
+    "answer": "<p>Zeker.<ul><li>Je kunt volledig anoniem deelnemen.</li><li>Je posts kunnen anoniem zijn.</li><li>Je profiel kan op privé staan zodat niemand je activiteit ziet.</li></ul></p>"
+  },
+  {
+    "question_id": "q16",
+    "question": "16. Zal deze app gratis blijven?",
+    "answer": "<p>[Dit antwoord is voorlopig leeggelaten]</p>"
+  },
+  {
+    "question_id": "q17",
+    "question": "17. Wat komt er binnenkort aan?",
+    "answer": "<p>Wat er op onze roadmap staat:<ul><li>Communitygroepen op basis van doelen.</li><li>Wekelijkse statistieken en voortgangsanalyses.</li><li>Openbare uitdagingen.</li><li>Integratie met welzijnsapps.</li><li>Privéalbums voor doelen met foto's.</li><li>Desktop- en mobiele apps.</li></ul></p>"
+  },
+  {
+    "question_id": "q18",
+    "question": "18. Hoe kan ik deelnemen aan dit project?",
+    "answer": "<p><ul><li>Meld je aan en begin met je doelen.</li><li>Nodig vrienden of je partner uit.</li><li>Geef feedback en suggesties.</li><li>Volg onze updates en help mee bouwen aan dit platform.</li></ul></p>"
+  }
+]
