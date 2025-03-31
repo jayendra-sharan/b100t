@@ -1,0 +1,25 @@
+name: Auto PR from stg to main
+
+on:
+  push:
+    branches:
+      - stg
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Create pull request from stg to main
+        uses: repo-sync/pull-request@v2
+        with:
+          source_branch: 'stg'
+          destination_branch: 'main'
+          pr_title: 'Auto PR: Merge stg into main'
+          pr_body: 'This PR was automatically created by a GitHub Action on push to stg.'
+          github_token: ${{ secrets.PAT }}
