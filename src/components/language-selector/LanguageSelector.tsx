@@ -49,11 +49,11 @@ export const LanguageSelector: React.FC = () => {
         value={currentLanguage}
         onChange={handleChange}
         label="Language"
-        sx={{ color: '#ffffff', borderColor: '#ffffff' }}
+        sx={{ color: '#ffffff' }}
         MenuProps={{ disableAutoFocusItem: true }}
         renderValue={(selected) => {
           const selectedLang = languages.find((lang) => lang.code === selected);
-          return `${selectedLang?.flag} ${selectedLang?.label}`; // Keep it simple
+          return `${selectedLang?.flag} ${selectedLang?.label}`;
         }}
       >
         {languages.map((lang) => (
